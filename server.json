@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.santex85/oss-audit-mcp",
+  "title": "OSS Audit (package due diligence)",
+  "description": "Open-source package due diligence: licences, release health, Scorecard, dependents, OSV vulns.",
+  "repository": {
+    "url": "https://github.com/santex85/oss-audit-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/santex85/oss-audit-mcp/releases/download/v0.1.0/oss-audit-mcp.mcpb",
+      "version": "0.1.0",
+      "fileSha256": "76f35819079400fd03ef09458d6e8bf9233fa0f640ac572543995f8297a4a183",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
