@@ -1,0 +1,70 @@
+{
+  "manifest_version": "0.4",
+  "name": "oss-audit-mcp",
+  "display_name": "OSS Audit (package due diligence)",
+  "version": "0.1.0",
+  "description": "Open-source package due diligence: licences, release health, Scorecard, dependents, OSV vulns.",
+  "long_description": "Vet open-source dependencies for npm, PyPI, Go, Maven, Cargo and NuGet: licences with copyleft classification, release recency, dependents count, the linked repository's OpenSSF Scorecard, and known vulnerabilities with severity and fixed versions, read live from deps.dev and OSV.dev. No API key needed. Not legal advice and not a full security audit.",
+  "author": {
+    "name": "santex85",
+    "url": "https://github.com/santex85"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/santex85/oss-audit-mcp"
+  },
+  "homepage": "https://github.com/santex85/oss-audit-mcp",
+  "support": "https://github.com/santex85/oss-audit-mcp/issues",
+  "license": "MIT",
+  "keywords": [
+    "open-source",
+    "license",
+    "vulnerabilities",
+    "osv",
+    "dependencies"
+  ],
+  "server": {
+    "type": "uv",
+    "entry_point": "src/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "src/server.py"
+      ],
+      "env": {
+        "MCP_TRANSPORT": "stdio"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "package_report",
+      "description": "Due-diligence report for one open-source package version."
+    },
+    {
+      "name": "check_licenses",
+      "description": "Licence table for up to 50 packages, with a copyleft flag (GPL/AGPL/LGPL/MPL/EPL and similar)."
+    },
+    {
+      "name": "vulnerabilities",
+      "description": "Known vulnerabilities (OSV.dev advisories) for a package, or for one exact version."
+    },
+    {
+      "name": "compare_packages",
+      "description": "Side-by-side health comparison of up to 10 alternative packages in one ecosystem (default versions)."
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  }
+}
