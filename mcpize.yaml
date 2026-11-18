@@ -1,0 +1,10 @@
+version: 1
+name: oss-audit-mcp
+description: Open-source package due diligence - licences and copyleft flags, release health, OpenSSF Scorecard, dependents and OSV vulnerabilities for npm, PyPI, Go, Maven, Cargo, NuGet.
+runtime: python
+entry: src/server.py
+build:
+  install: python -m venv .venv && .venv/bin/pip install --no-cache-dir -r requirements.txt
+startCommand:
+  type: http
+  command: .venv/bin/python src/server.py
